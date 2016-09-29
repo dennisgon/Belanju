@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	width: 100%;
+}
+.row{
+	    margin-right: 0px;
+}
+#header-top{
+	background-color: #F5F5F5;
+	width: 100%;
+	color: #A8A8A8;
+	text-align: center;
+}
+#header-down{
+	margin-left: 10px;
+}
+.container{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.logo{
+	width: 150px;
+	height: 87px;
+}
+.header-col{
+	min-height: 100px;
+}
+#header-down > div > div.col-md-8.header-col{
+	padding: 39px;
+}
+#header-down > div > div:nth-child(3) > p > span{
+	font-size: 42px;
+	margin: 29px;
+	color: #088bde;
+}
+#header-down > div > div:nth-child(4) > p > span{
+	font-size:42px;
+	margin: 29px;
+	color: #088bde;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  margin: auto;
+  height: 400px;
+}
+.title-product::after{
+    content:"";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 1px solid black;
+}
+.title-product::before{
+    content:"";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 1px solid black;
+}
+h1 {
+  position: relative;
+  text-align: center;
+}
+
+h1 span {
+  background: #fff;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+  color: #088bde;
+}
+
+h1:before {
+  background: #A8A8A8;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+    top: 50%;
+  width: 100%;
+}
+
+h1:before {
+  left: 0;
+}
+.hot-product{
+	border: 1px solid #000;
+    min-height: 278px;
+    margin: 0 10px;
+}
+.title-h1{
+	padding: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .search-box{
+        display: none;
+    }
+    #header-down > div > div:nth-child(4) > p > span {
+        font-size: 42px;
+        margin-top: 29px;
+        margin-right: 0px;
+        margin-bottom: 29px;
+        margin-left: 30px;
+        color: #088bde;
+    } 		
+}
