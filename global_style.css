@@ -96,14 +96,22 @@ h1:before {
   left: 0;
 }
 .hot-product{
-	border: 1px solid #000;
     min-height: 278px;
     margin: 0 10px;
 }
 .title-h1{
 	padding: 0;
 }
-
+.row-hot-product{
+    margin-left: 15px;
+}
+.hot-product-panel{
+	width: 100%;
+	text-align: center;
+}
+.hot-product-title{
+	color: #088bde;
+}
 @media only screen and (max-width: 500px) {
     .search-box{
         display: none;
