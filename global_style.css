@@ -502,7 +502,13 @@ div.shadow{
 }
 .baju-show{
   margin: 30px;
+  visibility: hidden;
 }
+.baju-show-visible{
+  margin: 30px;
+  visibility: visible !important;
+}
+
 
 /*image overlay*/
 .gender-woman-image-overlay{
@@ -662,4 +668,10 @@ div.shadow{
 .myhoverEffect:hover .textSec p{
   margin-left:0;
   opacity:1;
+}
+.baju-show{
+  -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
 }
