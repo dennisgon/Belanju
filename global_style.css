@@ -47,24 +47,24 @@ body{
 	padding: 0px;
 }
 .logo{
-	width: 150px;
-	height: 87px;
+	width: 100%;
+	height: 100%;
 }
 .header-col{
 	min-height: 100px;
 }
 #header-down > div > div.col-md-8.header-col{
-	padding: 39px;
+	padding: 25px;
 }
 #header-down > div > div:nth-child(3) > p > span{
 	font-size: 42px;
-	margin: 29px;
+	margin:15px;
 	color: #088bde;
 }
-#header-down > div > div:nth-child(4) > p > span{
-	font-size:42px;
-	margin: 29px;
-	color: #088bde;
+#header-down > div > div:nth-child(4) > a{
+  color: #088bde;
+  width: 100%;
+  margin-top: 20px;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -141,6 +141,9 @@ h1:before {
     padding: 10px;
 }
 @media only screen and (max-width: 500px) {
+    .pilihan-baju{
+      display: none;
+    }
     .search-box{
         display: none;
     }
@@ -502,7 +505,7 @@ div.shadow{
 }
 .baju-show{
   margin: 30px;
-  visibility: hidden;
+  visibility: visible;
 }
 .baju-show-visible{
   margin: 30px;
@@ -584,15 +587,24 @@ div.shadow{
 }
 #inti-carousel{
   position: relative;
+  min-height: 500px;
 }
 .owl-wrapper-outer{
-  margin-top: 10px;
+  margin-top: 15px;
 }
 #header-down > div > div:nth-child(3) > p > span:hover{
   font-size: 52px;
   position: fixed;
 }
+.owl-theme .owl-controls .owl-page.active span {
+    background-color: #088bde;
+    border: 1px solid #000;
+}
 
+.owl-theme .owl-controls .owl-page span {
+  background-color: #fff;
+  border: 1px solid #000;
+}
 .myhoverEffect{
   position:relative;
   width:400px;
@@ -670,8 +682,169 @@ div.shadow{
   opacity:1;
 }
 .baju-show{
-  -webkit-animation-duration: 0.3s;
-      animation-duration: 0.3s;
+  -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
+}
+
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+@import url('http://fonts.googleapis.com/css?family=Lato:300');
+
+
+.footer {
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.social {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: 0 10px;
+  line-height: 70px;
+  font-family: Entypo;
+  font-size: 35px;
+  text-align: center;
+  color: #bbb;
+  border-radius: 50%;
+  background: #eee;
+  overflow: hidden;
+  transition: color .3s;
+}
+.social>i{
+  font-size: 30px;
+}
+.social:hover {
+  color: #59d;
+  cursor: pointer;
+}
+
+.footer-up{
+  margin: 0 0 10px;
+  background-color: #F5F5F5;
+}
+body > section:nth-child(3) > div.row.footer-up > div:nth-child(1) > p{
+  text-align: justify;
+}
+body > section:nth-child(6) > div.row.footer-up > div:nth-child(1){
+  text-align: justify;
+}
+h3{
+  color: #088bde;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Helvetica';
+}
+.footer-down{
+  text-align: center;
+  background-color: #088bde;
+  color: #fff;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+    width: 50%;
+}
+#register_username, #register_email, #register_password, #login_username, #login_password{
+  margin: 10px 0;
+}
+.footer-up{
+    margin-bottom: 0;
+    min-height: 350px;
+}
+.thumb-image{
+  border: 1px solid #A8A8A8;
+}
+.big-image{
+  border: 1px solid #A8A8A8;
+
+}
+.title-detail{
+    border-bottom: 3px double #f0f0f0;
+    color:#088bde;
+}
+.title-detail-1{
+  margin: 0px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.detail-desc{
+  text-align: justify;
+}
+.hvr-icon-up:before {
+    content: "\f007";
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/*cart*/
+
+    .cart {
+        outline: none;
+        border: 0;
+        background: #088bde;
+        padding: 15px;
+        color: #fff;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition: 0.5s width;
+    }
+    .cart_clk {
+        width: calc(100% - 75px);
+    }
+    .crtdiv {
+        border: 1px solid #7d86c7;
+        width: 250px;
+        border-radius: 4px;
+        position: relative;
+        background: #eee;
+    }
+    .fa {
+        font-size: 16px;
+    }
+    .cart .fa {
+        font-size: 26px;
+        position: relative;
+        padding: 0 5px 0 0;
+    }
+    .cart .fa:after {
+        position: absolute;
+        content: attr(data-before);
+        color: #000;
+        font-family: 'Lato', sans-serif;
+        left: 11px;
+        font-weight: bold;
+        top: 5px;
+        font-size: 12px;
+    }
+    .qty {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        color: #416AA6;
+    }
+    .dec,
+    .inc {
+        cursor: pointer;
+    }
+    .num {
+        width: 22px;
+        display: inline-block;
+        text-align: Center;
+    }
+#detail-barang{
+  margin: 60px;
+}
+.more{
+    margin: 27%;
+    font-size: 171px !important;
+    color: #088bde;
 }
