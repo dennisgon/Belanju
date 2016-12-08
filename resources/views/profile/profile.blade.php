@@ -44,7 +44,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
+                  <a href="{{ url('profile/alamat/') }}" class="btn btn-primary">Tambah Alamat</a>
                   <a href="#" class="btn btn-primary">Team Sales Performance</a>
                 </div>
               </div>

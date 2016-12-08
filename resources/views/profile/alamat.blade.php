@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title', 'Page Title')
-
+ 
 @section('konten')
  @parent
  <div class="container-fluid " style="width: 50%; margin-bottom: 100px; margin-top: 40px;">
@@ -14,7 +14,7 @@
 	         </div>
 	 	</div>
 	<div class="well well-lg" style="background-color:#F5F5F5;">
-		<form action="" method="POST">
+		<form action="{{url('profile/alamat/store')}}" method="POST">
 			<div class="form-group">
 				<label for="nama">Nama</label>
 				<input type="text" class="form-control" id="nama" placeholder="Nama Tempat" name="nama" required>
@@ -24,28 +24,28 @@
 				<input type="text" class="form-control" id="receiver" placeholder="Penerima" name="receiver" required>
 			</div>
 			<div class="form-group">
-				<label for="address">Alamat</label>
-				<input type="text" class="form-control" id="address" placeholder="Alamat" name="address" required>
+				<label for="alamat">Alamat</label>
+				<input type="text" class="form-control" id="alamat" placeholder="Alamat" name="alamat" required>
 			</div>
 			<div class="form-group">
-				<label for="postal">Kode Pos</label>
-				<input type="text" class="form-control" id="postal" placeholder="Kode Pos" name="postal" required>
+				<label for="pos">Kode Pos</label>
+				<input type="text" class="form-control" id="pos" placeholder="Kode Pos" name="pos" required>
 			</div>
 			<div class="form-group">
 				<label for="provinsi">provinsi</label>
-				<input type="text" class="form-control" id="provinsi" placeholder="Provinsi" name="provinsi" disabled required>
+				<input type="text" class="form-control" id="provinsi" placeholder="Provinsi" name="provinsi"  required>
 			</div>
 			<div class="form-group">
 				<label for="kota">Kota/kabupaten</label>
-				<input type="text" class="form-control" id="kota" placeholder="kota" name="kota" disabled required>
+				<input type="text" class="form-control" id="kota" placeholder="kota" name="kota"  required>
 			</div>
 			<div class="form-group">
 				<label for="kecamatan">Kecamatan</label>
-				<input type="text" class="form-control" id="kecamatan" placeholder="kecamatan" name="kecamatan" disabled required>
+				<input type="text" class="form-control" id="kecamatan" placeholder="kecamatan" name="kecamatan"  required>
 			</div>
 			<div class="form-group">
 				<label for="kecamatan">Kelurahaan</label>
-				<input type="text" class="form-control" id="kelurahaan" placeholder="kelurahaan" name="kelurahaan" disabled required>
+				<input type="text" class="form-control" id="kelurahaan" placeholder="kelurahaan" name="kelurahaan"  required>
 			</div>
 			<div class="form-group">
 				<label for="telepon">Telepon</label>
@@ -59,10 +59,10 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
-		$( "#postal" ).on('input',function(e){
+		$( "#pos" ).on('input',function(e){
 		 		
 				$.ajax({
-				url: "https://kalarau.net/api/v1/kodepos/"+$("#postal").val(),
+				url: "https://kalarau.net/api/v1/kodepos/"+$("#pos").val(),
 				type: 'GET',
 				success: function(result) {
 					if (result["kodepos"][0]["kabupaten"]==null) {
@@ -73,8 +73,6 @@
 					$("#provinsi").val(result["kodepos"][0]["provinsi"]);
 					$("#kecamatan").val(result["kodepos"][0]["kecamatan"]);
 					$("#kelurahaan").val(result["kodepos"][0]["kelurahan"]);
-
-
 
 				}
 

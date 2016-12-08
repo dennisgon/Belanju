@@ -16,9 +16,17 @@ Route::get('/', function () {
 })->name('home');
 
 Route::group(['prefix' => 'profile'], function () {
+	Route::group(['prefix' => 'alamat'], function () {
+		Route::get('/','AlamatController@create');
+		Route::post('/store','AlamatController@store');
+	});
+
 	Route::get('/{id}', 'userController@show')->name('profile');
+
 	Route::get('/edit/{id}','userController@edit');
+
 	Route::post('/update/{id}', 'userController@update');
+
 });
 
 Route::post('/register', 'userController@store')->name('register');
