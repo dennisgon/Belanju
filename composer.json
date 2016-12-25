@@ -12,7 +12,9 @@
         "illuminate/session": "5.3.*",
         "illuminate/support": "5.3.*",
         "illuminate/view": "5.3.*",
-        "laravelcollective/html": "^5.3"
+        "laravelcollective/html": "^5.3",
+        "barryvdh/laravel-ide-helper": "v2.2.2",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

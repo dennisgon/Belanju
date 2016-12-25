@@ -16,7 +16,7 @@ class AlamatController extends Controller
     public function index()
     {
         //
-
+        return view('profile/alamat/changeAlamat');
     }
 
     /**
@@ -27,7 +27,7 @@ class AlamatController extends Controller
     public function create()
     {
         //
-        return view('profile/alamat');  
+        return view('profile/alamat/alamat');  
     }
 
     /**
@@ -51,7 +51,8 @@ class AlamatController extends Controller
         $alamat->kelurahaan = $request->kelurahaan;
         $alamat->telepon = $request->telepon;
         $alamat->save();
-        return redirect()->route('profile');
+        $alamat->status = "null";
+        return redirect()->route('profile', Auth::user()->id);
     }
 
     /**

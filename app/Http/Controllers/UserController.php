@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -60,7 +61,13 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        return view ('profile/profile', compact('user'));
+        $alamat = DB::table('alamats')->where([
+            ['status','primary'],
+            ['iduser','9'],
+        ])->get();
+        // $alamat = DB::table('alamats')->where('iduser', '9')->first();
+
+        return view ('profile/profile', compact('user','alamat'));
 
     }
 
@@ -99,7 +106,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->foto = "null";
         $user->save();
-        return view('profile/profile');
+        return view('profile/profile', compact('user','alamat'));
 
     }
 
@@ -120,10 +127,6 @@ class UserController extends Controller
         }else{
             echo "gagal";
         }
-        // var_dump(Auth::attempt(['email' => $request->username, 'password' => $request->password]));
-        // echo $request->username;
-        // echo "<br>";
-        // echo $request->password;
     }
 
 }

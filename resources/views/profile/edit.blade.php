@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Page Title')
+@section('title', 'Edit Profile')
 
 @section('konten')
  	@parent
  	<section>
 
- 		<div class="container-fluid " style="width: 50%; margin-bottom: 100px; margin-top: 40px;">
+ 		<div class="container-fluid " style="margin-bottom: 100px; margin-top: 40px;">
  		 <div class="row">
  		    	<h2 style="margin:20px;">Edit Profile</h2>
  		        <div class="btn-group btn-breadcrumb" style="margin:20px;">

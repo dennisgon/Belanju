@@ -4,7 +4,6 @@
 
 @section('konten')
  @parent
-<div class="well well-lg" style="background-color:#F5F5F5">
 	<form action="{{ url('profile/update', Auth::user()->id) }}" method="POST">
 		<div class="form-group">
 			<label for="shop_name">Shop Name</label>
