@@ -31,5 +31,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Alamat');
     }
-    
+    public function tokos()
+    {
+        return $this->belongsToMany('App\Toko');
+    }
 }

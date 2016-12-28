@@ -337,10 +337,11 @@
     <!-- / menu -->
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src=" https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-
+      <section id="aa-myaccount">
 		@section('konten')
         
         @show
+        </section>
         <!-- footer -->  
 		<footer id="aa-footer">
 		<!-- footer bottom -->

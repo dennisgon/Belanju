@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomepageController@index')->name('home');
+
 Route::get('/changeStatus/{id}/{user_id}', 'AlamatController@changestatus')->name('changeStatusAlamat');
 Route::group(['prefix' => 'profile'], function () {
 
@@ -42,6 +43,8 @@ Route::get('/logout', function(){
 	Auth::logout();
 	return redirect()->route('home');	
 })->name('logout');
+
+Route::resource('toko','TokoController');
 
 Route::post('/login', 'userController@trlogin')->name('login');
 // Route::get('/test', 'AboutController@index');
