@@ -15,7 +15,7 @@
 		         </div>
 	 		</div>
 			<div class="col-md-4">
-				<form action="{{url('profile/alamat/store')}}" method="POST">
+				<form action="{{route('alamat.store')}}" method="POST">
 					<div class="form-group">
 						<label for="nama">Nama</label>
 						<input type="text" class="form-control" id="nama" placeholder="Nama Tempat" name="nama" required>

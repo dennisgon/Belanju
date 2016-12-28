@@ -11,21 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-
-
-    return view('homepage');
-})->name('home');
-
+Route::get('/', 'HomepageController@index')->name('home');
+Route::get('/changeStatus/{id}/{user_id}', 'AlamatController@changestatus')->name('changeStatusAlamat');
 Route::group(['prefix' => 'profile'], function () {
 
-	Route::group(['prefix' => 'alamat'], function () {
-		Route::get('/','AlamatController@create');
-		
-		Route::post('/store','AlamatController@store');
-		Route::get('/change','AlamatController@index');
-	});
-	Route::get('/{id}', 'userController@show')->name('profile');
+	Route::resource('alamat','AlamatController');
+
+	Route::get('/{username}', 'userController@show')->name('profile');
 
 	Route::get('/edit/{id}','userController@edit');
 
@@ -52,5 +44,5 @@ Route::get('/logout', function(){
 })->name('logout');
 
 Route::post('/login', 'userController@trlogin')->name('login');
-Route::get('/test', 'AboutController@index');
-Route::post('/test/store', 'AboutController@store');
+// Route::get('/test', 'AboutController@index');
+// Route::post('/test/store', 'AboutController@store');

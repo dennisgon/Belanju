@@ -64,10 +64,10 @@
                             
                               <div class="col-md-4">
                                 <div class="col-md-12">
-                                  <a href="{{ url('/profile/alamat/') }}" class="btn btn-primary">Tambah Alamat</a>
+                                  <a href="{{ route('alamat.create') }}" class="btn btn-primary">Tambah Alamat</a>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 20px;">
-                                  <a href="{{ url('/profile/alamat/change') }}" class="btn btn-warning">Change Alamat</a>
+                                  <a href="{{ route('alamat.show', Auth::user()->id) }}" class="btn btn-warning">Change Alamat</a>
                                 </div>
 
                               </div> 

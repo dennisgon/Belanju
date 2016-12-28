@@ -60,10 +60,10 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user = User::findOrFail($id);
+        $user = User::where('username','=',$id)->firstOrFail();
         $alamat = DB::table('alamats')->where([
             ['status','primary'],
-            ['iduser','9'],
+            ['user_id',Auth::user()->id],
         ])->get();
         // $alamat = DB::table('alamats')->where('iduser', '9')->first();
 

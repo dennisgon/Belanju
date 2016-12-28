@@ -14,13 +14,13 @@ class HomepageController extends Controller
     public function index()
     {
         //        
-        $pathLogo =resource_path('json/logotemplate.json');
-        $contentLogo = json_decode(file_get_contents($path), true);
-        $pathContact =resource_path('json/contact.json');
-        $contentContact = json_decode(file_get_contents($path), true);
-        $pathAbout =resource_path('json/about.json');
-        $contentAbout = json_decode(file_get_contents($path), true);
-        return view('homepage',compact('contentLogo','contentContact','contentAbout'));
+        // $pathLogo =resource_path('json/logotemplate.json');
+        // $contentLogo = json_decode(file_get_contents($path), true);
+        // $pathContact =resource_path('json/contact.json');
+        // $contentContact = json_decode(file_get_contents($path), true);
+        // $pathAbout =resource_path('json/about.json');
+        // $contentAbout = json_decode(file_get_contents($path), true);
+        return view('homepage');
 
     }
 

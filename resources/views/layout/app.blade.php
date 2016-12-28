@@ -25,7 +25,7 @@
     <!-- price picker slider -->
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/nouislider.css')}}">
     <!-- Theme color -->
-    <link id="switcher" href="{{URL::asset('css/theme-color/lite-blue-theme.css')}}" rel="stylesheet">
+    <link id="switcher" href="{{URL::asset('css/theme-color/'.$contentLogo['theme'])}}" rel="stylesheet">
 
     <!-- Main style sheet -->
     <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">    
@@ -33,8 +33,6 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -125,7 +123,7 @@
                   <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
                   @if (Auth::check())
-                  <li><a href="{{ route('profile',  Auth::user()->id) }}">{{ Auth::user()->username }}</a></li>
+                  <li><a href="{{ route('profile',  Auth::user()->username) }}">{{ Auth::user()->username }}</a></li>
                   @else
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                   @endif
@@ -338,6 +336,7 @@
     </section>
     <!-- / menu -->
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src=" https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
 
 		@section('konten')
         
