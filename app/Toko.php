@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Toko extends Model
 {
     //
-    public function user()
+    public function users()
     {
         return $this->belongsToMany('App\User');
     }

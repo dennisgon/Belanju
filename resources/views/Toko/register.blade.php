@@ -75,7 +75,7 @@
  	</style>
  	<div class="container" style="margin-top: 30px;">
  		
-		<form action="{{ url('profile/update', Auth::user()->id) }}" method="POST">
+		<form action="{{ route('toko.store') }}" method="POST" files="true" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="shop_name">Shop Name</label>
 				<input type="text" class="form-control" id="shop_name" placeholder="Shop Name" name="shop_name" >
@@ -374,5 +374,29 @@
 	    });  
 	});
 </script>
+<script type="text/javascript">
+	$(document).ready(function(){
 
+		$( "#pos" ).on('input',function(e){
+		 		
+				$.ajax({
+				url: "https://kalarau.net/api/v1/kodepos/"+$("#pos").val(),
+				type: 'GET',
+				success: function(result) {
+					if (result["kodepos"][0]["kabupaten"]==null) {
+						$("#kota").val(result["kodepos"][0]["kota"]);
+					}else{
+						$("#kota").val(result["kodepos"][0]["kabupaten"]);
+					}
+					$("#provinsi").val(result["kodepos"][0]["provinsi"]);
+					$("#kecamatan").val(result["kodepos"][0]["kecamatan"]);
+					$("#kelurahaan").val(result["kodepos"][0]["kelurahan"]);
+
+				}
+
+
+			});
+		});
+	});
+</script>
 @endsection
