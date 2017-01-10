@@ -16,7 +16,8 @@ class TokoController extends Controller
     public function index()
     {
         //
-
+        $toko = Toko::where('status','pending')->get();
+        return view('toko/index', compact('toko'));
     }
 
     /**
@@ -27,6 +28,7 @@ class TokoController extends Controller
     public function create()
     {
         //
+
         return view('toko/register');
     }
 
@@ -121,5 +123,13 @@ class TokoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function accept($id)
+    {
+        $toko = Toko::find($id);
+        $toko->status = "accept";
+        $toko->save();
+        return back();
     }
 }

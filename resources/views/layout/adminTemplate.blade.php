@@ -163,7 +163,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a class=" hvr-bounce-to-right" href="blank.html"><i class="fa fa-file-o nav_icon"></i>Blank</a></li>
                                 </ul>
                             </li>
-                            <li><a class=" hvr-bounce-to-right" href="layout.html"><i class="fa fa-th nav_icon"></i> <span class="nav-label">Grid Layouts</span></a></li>
+                            <li><a class=" hvr-bounce-to-right" href="{{Route('toko.index')}}"><i class="fa fa-shopping-basket nav_icon"></i> <span class="nav-label">Toko</span></a></li>
                             <li>
                                 <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">

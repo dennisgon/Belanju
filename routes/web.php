@@ -25,7 +25,6 @@ Route::group(['prefix' => 'profile'], function () {
 	Route::post('/update/{id}', 'userController@update');
 
 });
-
 Route::group(['prefix' => 'admin'], function(){
 	route::get('/',function(){
 		return view('layout/adminTemplate');
@@ -41,11 +40,13 @@ Route::post('/register', 'userController@store')->name('register');
 
 Route::get('/logout', function(){
 	Auth::logout();
-	return redirect()->route('home');	
+	return redirect()->route('home');
 })->name('logout');
 
 Route::resource('toko','TokoController');
 
 Route::post('/login', 'userController@trlogin')->name('login');
+
+Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
 // Route::get('/test', 'AboutController@index');
 // Route::post('/test/store', 'AboutController@store');
