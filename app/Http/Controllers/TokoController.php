@@ -89,6 +89,7 @@ class TokoController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -123,6 +124,8 @@ class TokoController extends Controller
     public function destroy($id)
     {
         //
+        $toko = Toko::findOrFail($id);
+        $toko->delete();
     }
 
     public function accept($id)

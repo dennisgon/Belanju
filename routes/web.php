@@ -44,9 +44,11 @@ Route::get('/logout', function(){
 })->name('logout');
 
 Route::resource('toko','TokoController');
-
+Route::resource('kategori','KategoriController');
+Route::resource('pengiriman', 'PengirimanController');
 Route::post('/login', 'userController@trlogin')->name('login');
 
 Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
-// Route::get('/test', 'AboutController@index');
-// Route::post('/test/store', 'AboutController@store');
+Route::get('test',function(){
+   return view('Toko/show');
+});

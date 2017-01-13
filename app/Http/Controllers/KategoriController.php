@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Toko;
-use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+use Illuminate\Http\Request;
+use App\Category;
+
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,16 +14,9 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        //        
-        // $pathLogo =resource_path('json/logotemplate.json');
-        // $contentLogo = json_decode(file_get_contents($path), true);
-        // $pathContact =resource_path('json/contact.json');
-        // $contentContact = json_decode(file_get_contents($path), true);
-        // $pathAbout =resource_path('json/about.json');
-        // $contentAbout = json_decode(file_get_contents($path), true);
-
-        return view('homepage');
-
+        //
+        $category = Category::all();
+        return view('kategori/index', compact('category'));
     }
 
     /**
@@ -33,6 +27,7 @@ class HomepageController extends Controller
     public function create()
     {
         //
+        return view('kategori/create');
     }
 
     /**
@@ -44,6 +39,17 @@ class HomepageController extends Controller
     public function store(Request $request)
     {
         //
+        $kategori  = new Category;
+
+        $file = $request->file('gambar');
+        $destination_path = 'uploads/kategori/';
+        $filename = str_random(6).'_'.$file->getClientOriginalName();
+        $file->move($destination_path, $filename);
+
+        $kategori->nama = $request->namaKategori;
+        $kategori->fotoLayout = $destination_path . $filename;
+        $kategori->save();
+
     }
 
     /**
@@ -66,6 +72,7 @@ class HomepageController extends Controller
     public function edit($id)
     {
         //
+        $kategori = Category::findOrFail($id);
     }
 
     /**
@@ -78,6 +85,10 @@ class HomepageController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $kategori = Category::findOrFail($id);
+        $kategori->nama = $request->namaKategori;
+        $kategori->gambar = $request->gambar;
+        $kategori->save();
     }
 
     /**
@@ -89,5 +100,7 @@ class HomepageController extends Controller
     public function destroy($id)
     {
         //
+        $kategori = Category::findOrFail($id);
+        $kategori->delete();
     }
 }

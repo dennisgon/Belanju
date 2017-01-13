@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Toko;
+use App\Pengiriman;
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class PengirimanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,16 +13,9 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        //        
-        // $pathLogo =resource_path('json/logotemplate.json');
-        // $contentLogo = json_decode(file_get_contents($path), true);
-        // $pathContact =resource_path('json/contact.json');
-        // $contentContact = json_decode(file_get_contents($path), true);
-        // $pathAbout =resource_path('json/about.json');
-        // $contentAbout = json_decode(file_get_contents($path), true);
-
-        return view('homepage');
-
+        //
+        $kurir = Pengiriman::all();
+        return view('pengiriman/index', compact('kurir'));
     }
 
     /**
@@ -33,6 +26,7 @@ class HomepageController extends Controller
     public function create()
     {
         //
+        return view('pengiriman/create');
     }
 
     /**
@@ -44,6 +38,14 @@ class HomepageController extends Controller
     public function store(Request $request)
     {
         //
+        $kurir = new Pengiriman;
+        $kurir->nama = $request->namaPengiriman;
+        $file = $request->file('gambar');
+        $destination_path = 'uploads/kurir';
+        $filename = str_random(6).'_'.$file->getClientOriginalName();
+        $file->move($destination_path, $filename);
+        $kurir->logo = $destination_path . $filename;
+        $kurir->save();
     }
 
     /**
@@ -55,6 +57,7 @@ class HomepageController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**

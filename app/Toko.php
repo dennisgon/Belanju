@@ -11,4 +11,9 @@ class Toko extends Model
     {
         return $this->belongsToMany('App\User');
     }
+    public function produks()
+    {
+        return $this->hasMany('App\Produk');
+    }
+
 }

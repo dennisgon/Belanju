@@ -156,10 +156,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li><a class=" hvr-bounce-to-right" href="inbox.html"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span></a></li>
                             <li><a class=" hvr-bounce-to-right" href="gallery.html"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span></a></li>
                             <li>
-                                <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label">Pages</span><span class="fa arrow"></span></a>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-sort nav_icon"></i> <span class="nav-label">Kategori</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
-                                    <li><a class=" hvr-bounce-to-right" href="404.html"><i class="fa fa-info-circle nav_icon"></i>Error 404</a></li>
-                                    <li><a class=" hvr-bounce-to-right" href="faq.html"><i class="fa fa-question-circle nav_icon"></i>FAQ</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.create')}}"><i class="fa  fa-plus nav_icon"></i>Error 404</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.index')}}"><i class="fa fa-question-circle nav_icon"></i>FAQ</a></li>
                                     <li><a class=" hvr-bounce-to-right" href="blank.html"><i class="fa fa-file-o nav_icon"></i>Blank</a></li>
                                 </ul>
                             </li>
