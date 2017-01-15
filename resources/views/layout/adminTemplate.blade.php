@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank :: w3layouts</title>
+    <title>Admin Belanju</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" name="keywords">
@@ -156,21 +156,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li><a class=" hvr-bounce-to-right" href="inbox.html"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span></a></li>
                             <li><a class=" hvr-bounce-to-right" href="gallery.html"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span></a></li>
                             <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-dropbox nav_icon"></i> <span class="nav-label">Pengiriman</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('pengiriman.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Pengiriman</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('pengiriman.index')}}"><i class="fa fa-table nav_icon"></i>View Pengiriman</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-ticket nav_icon"></i> <span class="nav-label">Voucher</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('voucher.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Voucher</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('voucher.index')}}"><i class="fa fa-table nav_icon"></i>View Voucher</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-sort nav_icon"></i> <span class="nav-label">Kategori</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
-                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.create')}}"><i class="fa  fa-plus nav_icon"></i>Error 404</a></li>
-                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.index')}}"><i class="fa fa-question-circle nav_icon"></i>FAQ</a></li>
-                                    <li><a class=" hvr-bounce-to-right" href="blank.html"><i class="fa fa-file-o nav_icon"></i>Blank</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Kategori</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('kategori.index')}}"><i class="fa fa-table nav_icon"></i>View Kategori</a></li>
                                 </ul>
                             </li>
                             <li><a class=" hvr-bounce-to-right" href="{{Route('toko.index')}}"><i class="fa fa-shopping-basket nav_icon"></i> <span class="nav-label">Toko</span></a></li>
-                            <li>
-                                <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li><a class=" hvr-bounce-to-right" href="forms.html"><i class="fa fa-align-left nav_icon"></i>Basic forms</a></li>
-                                    <li><a class=" hvr-bounce-to-right" href="validation.html"><i class="fa fa-check-square-o nav_icon"></i>Validation</a></li>
-                                </ul>
-                            </li>
                             <li>
                                 <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-cog nav_icon"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">

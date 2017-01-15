@@ -26,6 +26,11 @@ Route::group(['prefix' => 'profile'], function () {
 
 });
 Route::group(['prefix' => 'admin'], function(){
+    Route::resource('toko','TokoController');
+    Route::resource('kategori','KategoriController');
+    Route::resource('pengiriman', 'PengirimanController');
+    Route::resource('voucher','VoucherController');
+    Route::resource('bank','BankController');
 	route::get('/',function(){
 		return view('layout/adminTemplate');
 	});
@@ -43,9 +48,7 @@ Route::get('/logout', function(){
 	return redirect()->route('home');
 })->name('logout');
 
-Route::resource('toko','TokoController');
-Route::resource('kategori','KategoriController');
-Route::resource('pengiriman', 'PengirimanController');
+
 Route::post('/login', 'userController@trlogin')->name('login');
 
 Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
