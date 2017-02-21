@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bank;
 use Illuminate\Http\Request;
 
 class BankController extends Controller
@@ -14,7 +15,8 @@ class BankController extends Controller
     public function index()
     {
         //
-        return view('bank/index');
+        $bank = Bank::all();
+        return view('bank/index', compact('bank'));
     }
 
     /**
@@ -37,7 +39,14 @@ class BankController extends Controller
     public function store(Request $request)
     {
         //
-        //$bank =
+        $bank = new Bank();
+        $bank->namaBank = $request->nama;
+        $file = $request->file('gambar');
+        $destination_path = 'uploads/kategori/';
+        $filename = str_random(6).'_'.$file->getClientOriginalName();
+        $file->move($destination_path, $filename);
+        $bank->logo = $destination_path . $filename;
+        $bank->save();
     }
 
     /**

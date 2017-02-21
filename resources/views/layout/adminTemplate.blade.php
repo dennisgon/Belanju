@@ -163,6 +163,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </ul>
                             </li>
                             <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa  fa-university nav_icon"></i> <span class="nav-label">Bank</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('bank.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Bank</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('bank.index')}}"><i class="fa fa-table nav_icon"></i>View Bank</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-ticket nav_icon"></i> <span class="nav-label">Voucher</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li><a class=" hvr-bounce-to-right" href="{{route('voucher.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Voucher</a></li>
