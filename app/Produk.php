@@ -19,4 +19,8 @@ class Produk extends Model
     {
         return $this->hasOne('App\Category');
     }
+    public function komentars()
+    {
+        return $this->hasMany('App\Komentar');
+    }
 }

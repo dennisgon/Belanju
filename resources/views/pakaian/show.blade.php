@@ -3,7 +3,8 @@
 @section('title', 'Profile')
 
 @section('konten')
-
+    <link rel="stylesheet" href="{{URL::asset('bower_resources/raty/lib/jquery.raty.css')}}">
+    <script src="{{URL::asset('bower_resources/raty/lib/jquery.raty.js')}}"></script>
 
     <section id="aa-product-details">
         <div class="container">
@@ -90,68 +91,67 @@
                                     <div class="aa-product-review-area">
                                         <h4>2 Reviews for T-Shirt</h4>
                                         <ul class="aa-review-nav">
+                                            @foreach($pakaian->komentars()->get() as $komen)
                                             <li>
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
+                                                            <img class="media-object" src="{{$komen->user()->firstOrFail()->foto}}" alt="user image">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
-                                                        <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
+                                                        <h4 class="media-heading"><strong>{{$komen->user()->firstOrFail()->username}}</strong> - <span>{{$komen->created_at}}</span></h4>
                                                         <div class="aa-product-rating">
+                                                            @for ($i = 0; $i < $komen->ratting; $i++)
                                                             <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star-o"></span>
+                                                            @endfor
                                                         </div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                        <p>{{$komen->pesan}}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <a href="#">
-                                                            <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
-                                                        <div class="aa-product-rating">
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                         <h4>Add a review</h4>
                                         <div class="aa-your-rating">
-                                            <p>Your Rating</p>
-                                            <a href="#"><span class="fa fa-star-o"></span></a>
-                                            <a href="#"><span class="fa fa-star-o"></span></a>
-                                            <a href="#"><span class="fa fa-star-o"></span></a>
-                                            <a href="#"><span class="fa fa-star-o"></span></a>
-                                            <a href="#"><span class="fa fa-star-o"></span></a>
+                                        <div id="rate"></div>
                                         </div>
+
                                         <!-- review form -->
-                                        <form action="" class="aa-review-form">
+                                        {{--<form class="aa-review-form">--}}
                                             <div class="form-group">
                                                 <label for="message">Your Review</label>
                                                 <textarea class="form-control" rows="3" id="message"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-default aa-review-submit">Submit</button>
-                                        </form>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button class="btn btn-default " id="test">Submit</button>
+                                        {{--</form>--}}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <script>
+
+                            $(document).ready(function(){
+                                $('#rate').raty({ starType: 'i' });
+                                $('#test').click(function () {
+                                    $.ajax({
+                                        url: "{{route('komentar.store')}}",
+                                        type: 'POST',
+                                        data: {
+                                            '_token': $('input[name=_token]').val(),
+                                            'message':$("#message").val(),
+                                            'ratting':$('#rate').raty('score'),
+                                            'produk_id':{{$pakaian->id}}
+                                        },beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));},
+                                        success: function(result) {
+                                            location.reload();
+                                        }
+                                    })
+
+                                });
+                            });
+                        </script>
                         <!-- Related product -->
                         <div class="aa-product-related-item">
                             <h3>Related Products</h3>

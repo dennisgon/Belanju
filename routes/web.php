@@ -55,7 +55,7 @@ Route::post('pesan','PesanController@store')->name('pesan.store');
 Route::get('tests',function(){
    return view('welcome');
 });
-
+Route::resource('komentar','KomentarController');
 Route::post('/login', 'userController@trlogin')->name('login');
 
 Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
