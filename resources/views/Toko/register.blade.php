@@ -380,7 +380,7 @@
 		$( "#pos" ).on('input',function(e){
 		 		
 				$.ajax({
-				url: "https://kalarau.net/api/v1/kodepos/"+$("#pos").val(),
+				url: "http://kalarau.net/api/v1/kodepos/"+$("#pos").val(),
 				type: 'GET',
 				success: function(result) {
 					if (result["kodepos"][0]["kabupaten"]==null) {

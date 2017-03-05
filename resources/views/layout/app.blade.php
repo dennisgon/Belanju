@@ -122,13 +122,19 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
+                  {{--<li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>--}}
                   <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
-                    <li><a href="account.html">Toko</a></li>
+
                   @if (Auth::check())
+                        @if(session()->has('tokos'))
+                            <li><a href="{{route('toko.show',session()->get('tokos')[0])}}">Toko</a></li>
+                        @else
+                            <li><a href="{{route('toko.create')}}">Ingin Berjualan</a></li>
+                        @endif
                   <li><a href="{{ route('profile',  Auth::user()->username) }}">{{ Auth::user()->username }}</a></li>
                   @else
+                        <li><a href="account.html">Ingin Berjualan</a></li>
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                   @endif
                 </ul>
@@ -149,7 +155,7 @@
                 <!-- logo  -->
                 <div class="aa-logo">
                   <!-- Text based logo -->
-                  <img src="{{ asset($contentLogo['logo']) }}" width="340px" height="100px"> 
+                  <a href="{{route('home')}}"><img src="{{ asset($contentLogo['logo']) }}" width="340px" height="100px"> </a>
                   <!-- img based logo -->
                   <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
                 </div>
@@ -355,51 +361,51 @@
 						<div class="col-md-12">
 						<div class="aa-footer-top-area">
 							<div class="row">
-								<div class="col-md-3 col-sm-6">
-									<div class="aa-footer-widget">
-									<h3>Main Menu</h3>
-									<ul class="aa-footer-nav">
-										<li><a href="#">Home</a></li>
-										<li><a href="#">Our Services</a></li>
-										<li><a href="#">Our Products</a></li>
-										<li><a href="#">About Us</a></li>
-										<li><a href="#">Contact Us</a></li>
-									</ul>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="aa-footer-widget">
-										<div class="aa-footer-widget">
-										<h3>Knowledge Base</h3>
-										<ul class="aa-footer-nav">
-											<li><a href="#">Delivery</a></li>
-											<li><a href="#">Returns</a></li>
-											<li><a href="#">Services</a></li>
-											<li><a href="#">Discount</a></li>
-											<li><a href="#">Special Offer</a></li>
-										</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6">
-									<div class="aa-footer-widget">
-										<div class="aa-footer-widget">
-											<h3>Useful Links</h3>
-											<ul class="aa-footer-nav">
-												<li><a href="#">Site Map</a></li>
-												<li><a href="#">Search</a></li>
-												<li><a href="#">Advanced Search</a></li>
-												<li><a href="#">Suppliers</a></li>
-												<li><a href="#">FAQ</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
+								{{--<div class="col-md-3 col-sm-6">--}}
+									{{--<div class="aa-footer-widget">--}}
+									{{--<h3>Main Menu</h3>--}}
+									{{--<ul class="aa-footer-nav">--}}
+										{{--<li><a href="#">Home</a></li>--}}
+										{{--<li><a href="#">Our Services</a></li>--}}
+										{{--<li><a href="#">Our Products</a></li>--}}
+										{{--<li><a href="#">About Us</a></li>--}}
+										{{--<li><a href="#">Contact Us</a></li>--}}
+									{{--</ul>--}}
+									{{--</div>--}}
+								{{--</div>--}}
+								{{--<div class="col-md-3 col-sm-6">--}}
+									{{--<div class="aa-footer-widget">--}}
+										{{--<div class="aa-footer-widget">--}}
+										{{--<h3>Knowledge Base</h3>--}}
+										{{--<ul class="aa-footer-nav">--}}
+											{{--<li><a href="#">Delivery</a></li>--}}
+											{{--<li><a href="#">Returns</a></li>--}}
+											{{--<li><a href="#">Services</a></li>--}}
+											{{--<li><a href="#">Discount</a></li>--}}
+											{{--<li><a href="#">Special Offer</a></li>--}}
+										{{--</ul>--}}
+										{{--</div>--}}
+									{{--</div>--}}
+								{{--</div>--}}
+								{{--<div class="col-md-3 col-sm-6">--}}
+									{{--<div class="aa-footer-widget">--}}
+										{{--<div class="aa-footer-widget">--}}
+											{{--<h3>Useful Links</h3>--}}
+											{{--<ul class="aa-footer-nav">--}}
+												{{--<li><a href="#">Site Map</a></li>--}}
+												{{--<li><a href="#">Search</a></li>--}}
+												{{--<li><a href="#">Advanced Search</a></li>--}}
+												{{--<li><a href="#">Suppliers</a></li>--}}
+												{{--<li><a href="#">FAQ</a></li>--}}
+											{{--</ul>--}}
+										{{--</div>--}}
+									{{--</div>--}}
+								{{--</div>--}}
 
-								<div class="col-md-3 col-sm-6">
+								<div class="col-md-offset-9 col-md-3 col-sm-6">
 									<div class="aa-footer-widget">
 										<div class="aa-footer-widget">
-											<h3>Contact Us</h3>
+											<h3>Hubungi Kami</h3>
 											<address>
 												<p> {{ $contentContact['Alamat'] }}</p>
 												<p><span class="fa fa-phone"></span>{{ $contentContact['noTelepon'] }}</p>
@@ -427,12 +433,12 @@
 						<div class="col-md-12">
 							<div class="aa-footer-bottom-area">
 								<p>Made with ♥ by <a href="http://www.dennisgon.com/">Dennisgon</a></p>
-								<div class="aa-footer-payment">
-									<span class="fa fa-cc-mastercard"></span>
-									<span class="fa fa-cc-visa"></span>
-									<span class="fa fa-paypal"></span>
-									<span class="fa fa-cc-discover"></span>
-								</div>
+								{{--<div class="aa-footer-payment">--}}
+									{{--<span class="fa fa-cc-mastercard"></span>--}}
+									{{--<span class="fa fa-cc-visa"></span>--}}
+									{{--<span class="fa fa-paypal"></span>--}}
+									{{--<span class="fa fa-cc-discover"></span>--}}
+								{{--</div>--}}
 							</div>
 						</div>
 					</div>

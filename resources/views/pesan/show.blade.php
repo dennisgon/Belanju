@@ -87,27 +87,71 @@
                     <h1 class="content-title">Pesan Masuk</h1>
 
                     <ul class="mail-list">
+                        @foreach($pesan as $pesans)
                         <li>
                             <a href="" style="width: 70%; display: inline-block;">
-                                <span class="mail-sender">You Tube</span>
-                                <span class="mail-subject">New subscribers!</span>
-                                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+                                <span class="mail-sender">{{$pesans->user()->firstOrFail()->username}}</span>
+                                <span class="mail-subject">{{$pesans->subjek}}</span>
+                                <span class="mail-message-preview">{{$pesans->message}}</span>
                             </a>
-                            <button type="button" class="btn btn-default">Reply</button>
+                            <button type="button" class="btn btn-default rep" data-toggle="modal" data-target="#myModal" user="{{$pesans->user_id}}" toko="{{$pesans->toko_id}}" subjek = "{{$pesans->subjek}}" >Reply</button>
                         </li>
-                        <li>
-                            <a href="" style="width: 70%; display: inline-block;">
-                                <span class="mail-sender">You Tube</span>
-                                <span class="mail-subject">New subscribers!</span>
-                                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                            </a>
-                            <button type="button" class="btn btn-default">Reply</button>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
 
     </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Message</h4>
+                </div>
+                <form method="POST" action="{{route('pesan.storeOut')}}">
+                    {{ csrf_field() }}
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="subjek">Subjek:</label>
+                            <input type="text" class="form-control" id="subjek" name="subjek">
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan:</label>
+                            <textarea class="form-control" rows="5" id="pesan" name="pesan"></textarea>
+                        </div>
+                        <input type="hidden" value="" name="useri" id="useri">
+                        <input type="hidden" value="" name="toko" id="toko">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-default" value="Kirim"/>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".rep").click(function(){
+
+                var subjek = $(this).attr('subjek');
+                var toko = $(this).attr('toko');
+                var user = $(this).attr('user');
+
+                $("#subjek").val("RE: "+subjek);
+                $("#useri").val(user);
+                $("#toko").val(toko);
+
+            });
+        });
+
+    </script>
 @endsection

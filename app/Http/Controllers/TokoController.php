@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Toko;
+use App\Produk;
+use App\Gambar;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
@@ -49,19 +51,19 @@ class TokoController extends Controller
         $toko->tlp = $request->telepon;
 
         $file = $request->file('ktp');
-        $destination_path = 'uploads/toko/ktp';
+        $destination_path = 'uploads/toko/ktp/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
         $toko->sampulToko = $destination_path . $filename;
 
         $file1 = $request->file('logo');
-        $destination_path1 = 'uploads/toko/logo';
+        $destination_path1 = 'uploads/toko/logo/';
         $filename1 = str_random(6).'_'.$file1->getClientOriginalName();
         $file1->move($destination_path1, $filename1);
         $toko->Tandapengenal = $request->shop_description;
 
         $file2 = $request->file('sampul');
-        $destination_path2 = 'uploads/toko/sampul';
+        $destination_path2 = 'uploads/toko/sampul/';
         $filename2 = str_random(6).'_'.$file2->getClientOriginalName();
         $file2->move($destination_path2, $filename2);
         $toko->imagetoko =  $destination_path . $filename;
@@ -89,7 +91,21 @@ class TokoController extends Controller
     public function show($id)
     {
         //
+        //$user = User::where('username','=',$id)->firstOrFail();
+        $toko = Toko::where('nama','=',$id)->firstOrFail();
 
+         $pakaian = Produk::where('toko_id','=', $toko->id)->get();
+//        $tokoArray = array();
+//        foreach ($pakaian as $pakaians){
+//            foreach ($pakaians->gambars as $gambar){
+//                $tokoArray [] = $gambar->id;
+//            }
+//
+//        }
+//        echo $tokoArray[0];
+//        print_r($pakaian->gambar);
+//        var_dump($pakaian->gambar);
+        return view('toko/show', compact('toko'), compact('pakaian'));
     }
 
     /**

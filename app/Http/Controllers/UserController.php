@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Toko;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
@@ -123,7 +124,25 @@ class UserController extends Controller
 
     public function trlogin(Request $request){
         if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
-            return redirect()->route('home');
+
+            //$request->session()->flush();
+            $user = User::find(Auth::user()->id);
+
+            $tokoArray = array();
+            foreach ($user->tokos as $toko){
+               $tokoArray [] = $toko->nama;
+            }
+            print_r($tokoArray);
+            if (empty($tokoArray)){
+                return redirect()->route('home');
+            }else{
+                $request->session()->put('tokos', $tokoArray);
+                var_dump($request->session()->get('toko'));
+                return redirect()->route('home');
+            }
+
+
+            //$request->session()->put('toko', '');
         }else{
             echo "gagal";
         }

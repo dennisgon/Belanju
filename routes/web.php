@@ -26,7 +26,6 @@ Route::group(['prefix' => 'profile'], function () {
 
 });
 Route::group(['prefix' => 'admin'], function(){
-    Route::resource('toko','TokoController');
     Route::resource('kategori','KategoriController');
     Route::resource('pengiriman', 'PengirimanController');
     Route::resource('voucher','VoucherController');
@@ -42,16 +41,24 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 Route::post('/register', 'userController@store')->name('register');
-
+Route::resource('toko','TokoController');
+Route::resource('pakaian','ProdukController');
 Route::get('/logout', function(){
 	Auth::logout();
+    Session::flush();
 	return redirect()->route('home');
 })->name('logout');
 
+Route::resource('pesan','PesanController');
+Route::post('pesan','PesanController@storeOut')->name('pesan.storeOut');
+Route::post('pesan','PesanController@store')->name('pesan.store');
+Route::get('tests',function(){
+   return view('welcome');
+});
 
 Route::post('/login', 'userController@trlogin')->name('login');
 
 Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
 Route::get('test',function(){
-   return view('Toko/show');
+   return view('registrasi');
 });

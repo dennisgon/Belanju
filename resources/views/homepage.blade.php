@@ -12,7 +12,7 @@
              <!-- single slide item -->
              <li>
                <div class="seq-model">
-                 <img data-seq src="{{URL::asset('img/slider/1.jpg')}}" alt="Men slide img" />
+                 <img data-seq src="http://chasseurmagazine.com/wp-content/uploads/2013/11/Zara-Man-2013-Autumn-Winter-Collection-2.jpg" height="700px" width="1920px" alt="Men slide img" />
                </div>
                <div class="seq-title">
                 <span data-seq>Save Up to 75% Off</span>                
@@ -92,7 +92,7 @@
                <div class="col-md-5 no-padding">                
                  <div class="aa-promo-left">
                    <div class="aa-promo-banner">                    
-                     <img src="img/promo-banner-1.jpg" alt="img">                    
+                     <img src="https://s-media-cache-ak0.pinimg.com/originals/9c/eb/63/9ceb630c6e595a3599a0f37c27669e23.jpg" height="450px" width="450px" alt="img">
                      <div class="aa-prom-content">
                        <span>75% Off</span>
                        <h4><a href="#">For Women</a></h4>                      
@@ -105,7 +105,7 @@
                  <div class="aa-promo-right">
                    <div class="aa-single-promo-right">
                      <div class="aa-promo-banner">                      
-                       <img src="img/promo-banner-3.jpg" alt="img">                      
+                       <img src="http://g03.a.alicdn.com/kf/HTB1HyM1JXXXXXctXVXXq6xXFXXXj/2015-Man-Brand-Designer-Mandarin-Collar-Chinese-blazer-down-jacket-Men-s-2015-Collar-suit-Jackets.jpg" width="320px" height="320px" alt="img">
                        <div class="aa-prom-content">
                          <span>Exclusive Item</span>
                          <h4><a href="#">For Men</a></h4>                        
@@ -113,17 +113,17 @@
                      </div>
                    </div>
                    <div class="aa-single-promo-right">
-                     <div class="aa-promo-banner">                      
-                       <img src="img/promo-banner-2.jpg" alt="img">                      
+                     <div class="aa-promo-banner">
+                       <img src="https://ae01.alicdn.com/kf/HTB1RE8bIVXXXXaXXpXXq6xXFXXX1/-VIAONS-2015-Famous-Brand-Scarf-Women-Winter-Cachecol-Fashion-Women-Scarf-Warm-Shawls-Plaid-Scarf.jpg_350x350.jpg" width="320px" height="320px" alt="img">
                        <div class="aa-prom-content">
                          <span>Sale Off</span>
-                         <h4><a href="#">On Shoes</a></h4>                        
+                         <h4><a href="#">Jacket</a></h4>
                        </div>
                      </div>
                    </div>
                    <div class="aa-single-promo-right">
-                     <div class="aa-promo-banner">                      
-                       <img src="img/promo-banner-4.jpg" alt="img">                      
+                     <div class="aa-promo-banner">
+                       <img src="http://www.socialphy.org/wp-content/uploads/2015/07/childrens-clothing-1.jpg" height="320px" width="320px" alt="img">
                        <div class="aa-prom-content">
                          <span>New Arrivals</span>
                          <h4><a href="#">For Kids</a></h4>                        
@@ -131,11 +131,11 @@
                      </div>
                    </div>
                    <div class="aa-single-promo-right">
-                     <div class="aa-promo-banner">                      
-                       <img src="img/promo-banner-5.jpg" alt="img">                      
+                     <div class="aa-promo-banner">
+                       <img src="http://onlinewomenclothing.net/wp-content/uploads/2016/07/fashion.jpg" height="320px" width="320px" alt="img">
                        <div class="aa-prom-content">
                          <span>25% Off</span>
-                         <h4><a href="#">For Bags</a></h4>                        
+                         <h4><a href="#">For Your Day</a></h4>
                        </div>
                      </div>
                    </div>

@@ -35,4 +35,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Toko');
     }
+    public function pesans()
+    {
+        return $this->hasMany('App\Pesan');
+    }
 }

@@ -11,4 +11,12 @@ class Produk extends Model
     {
         return $this->belongsTo('App\Toko');
     }
+    public function gambars()
+    {
+        return $this->hasMany('App\Gambar');
+    }
+    public function kategori()
+    {
+        return $this->hasOne('App\Category');
+    }
 }

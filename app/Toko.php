@@ -15,5 +15,9 @@ class Toko extends Model
     {
         return $this->hasMany('App\Produk');
     }
+    public function pesans()
+    {
+        return $this->hasMany('App\Pesan');
+    }
 
 }

@@ -62,99 +62,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class=" border-bottom">
                 <div class="full-left">
-                    <section class="full-top">
-                        <button id="toggle"><i class="fa fa-arrows-alt"></i></button>
-                    </section>
-                    <form class=" navbar-left-right">
-                        <input onblur="if (this.value == '') {this.value = 'Search...';}" onfocus="this.value = '';" type="text" value="Search..."> <input class="fa fa-search" type="submit" value="">
-                    </form>
-                    <div class="clearfix"></div>
+
                 </div><!-- Brand and toggle get grouped for better mobile display -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="drop-men">
-                    <ul class=" nav_1">
-                        <li class="dropdown at-drop">
-                            <a class="dropdown-toggle dropdown-at" data-toggle="dropdown" href="#"><i class="fa fa-globe"></i> <span class="number">5</span></a>
-                            <ul class="dropdown-menu menu1" role="menu">
-                                <li>
-                                    <a href="#"></a>
-                                    <div class="user-new">
-                                        <p>New user registered</p><span>40 seconds ago</span>
-                                    </div>
-                                    <div class="user-new-left">
-                                        <i class="fa fa-user-plus"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <a href="#"></a>
-                                    <div class="user-new">
-                                        <p>Someone special liked this</p><span>3 minutes ago</span>
-                                    </div>
-                                    <div class="user-new-left">
-                                        <i class="fa fa-heart"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <a href="#"></a>
-                                    <div class="user-new">
-                                        <p>John cancelled the event</p><span>4 hours ago</span>
-                                    </div>
-                                    <div class="user-new-left">
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <a href="#"></a>
-                                    <div class="user-new">
-                                        <p>The server is status is stable</p><span>yesterday at 08:30am</span>
-                                    </div>
-                                    <div class="user-new-left">
-                                        <i class="fa fa-info"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <a href="#"></a>
-                                    <div class="user-new">
-                                        <p>New comments waiting approval</p><span>Last Week</span>
-                                    </div>
-                                    <div class="user-new-left">
-                                        <i class="fa fa-rss"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li><a class="view" href="#">View all messages</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle dropdown-at" data-toggle="dropdown" href="#"><span class=" name-caret">Rackham<i class="caret"></i></span><img src="images/wo.jpg"></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
-                                <li><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox</a></li>
-                                <li><a href="calendar.html"><i class="fa fa-calendar"></i>Calender</a></li>
-                                <li><a href="inbox.html"><i class="fa fa-clipboard"></i>Tasks</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div><!-- /.navbar-collapse -->
                 <div class="clearfix"></div>
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
-                            <li><a class=" hvr-bounce-to-right" href="index.html"><i class="fa fa-dashboard nav_icon"></i><span class="nav-label">Dashboards</span></a></li>
+                            <li><a class=" hvr-bounce-to-right" href="index.html"><i class="fa fa-dashboard nav_icon"></i><span class="nav-label">home</span></a></li>
                             <li>
-                                <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Menu Levels</span><span class="fa arrow"></span></a>
+                                <a class=" hvr-bounce-to-right" href="#"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Laporan Pemasukan</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li><a class=" hvr-bounce-to-right" href="graphs.html"><i class="fa fa-area-chart nav_icon"></i>Graphs</a></li>
                                     <li><a class=" hvr-bounce-to-right" href="maps.html"><i class="fa fa-map-marker nav_icon"></i>Maps</a></li>
                                     <li><a class=" hvr-bounce-to-right" href="typography.html"><i class="fa fa-file-text-o nav_icon"></i>Typography</a></li>
                                 </ul>
                             </li>
-                            <li><a class=" hvr-bounce-to-right" href="inbox.html"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span></a></li>
-                            <li><a class=" hvr-bounce-to-right" href="gallery.html"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span></a></li>
+                            <li><a class=" hvr-bounce-to-right" href="inbox.html"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Order Pakaian</span></a></li>
                             <li>
                                 <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-dropbox nav_icon"></i> <span class="nav-label">Pengiriman</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
