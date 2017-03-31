@@ -38,6 +38,9 @@ Route::group(['prefix' => 'admin'], function(){
 	route::post('/contact/store','ContactController@store');
 	route::get('/logotemplate','LogoTemplateController@index');
 	route::post('/logotemplate/store','LogoTemplateController@store');
+    route::resource('jenisPem', 'CPembayaraanController');
+    route::resource('membership', 'MembershipController');
+    route::resource('tempatPromosi', 'TempatPromosiController');
 });
 
 Route::post('/register', 'userController@store')->name('register');
@@ -57,8 +60,15 @@ Route::get('tests',function(){
 });
 Route::resource('komentar','KomentarController');
 Route::post('/login', 'userController@trlogin')->name('login');
-
+Route::resource('shop', 'CartController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::get('cart/{id}','CartController@remove')->name('cart.remove');
 Route::get('/accepted/{id}','TokoController@accept')->name('toko.accept');
 Route::get('test',function(){
    return view('registrasi');
+});
+route::get('/show/{id}', 'KategoriController@tampilkan')->name('tampilkan');
+route::resource('SettingKurir','KurirTController');
+route::resource('order','OrderController');
+route::get('test', function(){
+    return view('registrasi');
 });

@@ -49,24 +49,24 @@ class TokoController extends Controller
         $toko->description = $request->shop_description;
         $toko->tagline = $request->tag_line;
         $toko->tlp = $request->telepon;
-
+        $toko->membership = "Basic";
         $file = $request->file('ktp');
         $destination_path = 'uploads/toko/ktp/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
-        $toko->sampulToko = $destination_path . $filename;
+        $toko->Tandapengenal = $destination_path . $filename;
 
         $file1 = $request->file('logo');
         $destination_path1 = 'uploads/toko/logo/';
         $filename1 = str_random(6).'_'.$file1->getClientOriginalName();
         $file1->move($destination_path1, $filename1);
-        $toko->Tandapengenal = $request->shop_description;
+        $toko->imagetoko = $destination_path1 . $filename1;
 
         $file2 = $request->file('sampul');
         $destination_path2 = 'uploads/toko/sampul/';
         $filename2 = str_random(6).'_'.$file2->getClientOriginalName();
         $file2->move($destination_path2, $filename2);
-        $toko->imagetoko =  $destination_path . $filename;
+        $toko->sampulToko =  $destination_path2 . $filename2;
 
         $toko->alamat = $request->alamat;
         $toko->kota = $request->kota;
@@ -77,9 +77,10 @@ class TokoController extends Controller
         $toko->save();
         $user = User::find(Auth::user()->id);
         $toko->users()->attach($user);
-        // $
-
-        // $data['logo'] = $destination_path . $filename;
+        $tokoArray = array();
+        $tokoArray[] = $toko->nama;
+        $request->session()->put('tokos', $tokoArray);
+        return redirect()->route('SettingKurir.create');
     }
 
     /**

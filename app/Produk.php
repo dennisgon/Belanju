@@ -17,7 +17,7 @@ class Produk extends Model
     }
     public function kategori()
     {
-        return $this->hasOne('App\Category');
+        return $this->belongsTo('App\Category','kategori_id');
     }
     public function komentars()
     {

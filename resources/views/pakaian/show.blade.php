@@ -54,22 +54,35 @@
                                         <h4>Warna: {{$pakaian->warna}}</h4>
 
                                         <div class="aa-prod-quantity">
-                                            <form action="">
-                                                <select id="" name="">
-                                                    <option selected="1" value="0">1</option>
-                                                    <option value="1">2</option>
-                                                    <option value="2">3</option>
-                                                    <option value="3">4</option>
-                                                    <option value="4">5</option>
-                                                    <option value="5">6</option>
+                                            <form method="POST" action="{{route('shop.store')}}" style="display: inline-block;">
+                                                <select  name="qty">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
                                                 </select>
-                                            </form>
+
+                                                <select  name="pengiriman" style="width: 100px;">
+                                                    <option value=""></option>
+                                                    @foreach($pakaian->toko()->firstOrFail()->pengiriman()->firstOrFail()->kurirTs()->get() as $row)
+                                                    <option value="{{$row->id}}">{{$row->nama}}</option>
+                                                    @endforeach
+                                                </select>
                                             <p class="aa-prod-category">
-                                                Category: <a href="#">Polo T-Shirt</a>
+                                                Category: <a href="#">{{$pakaian->kategori()->firstOrFail()->nama}}</a>
                                             </p>
                                         </div>
                                         <div class="aa-prod-view-bottom">
-                                            <a class="aa-add-to-cart-btn" >Add To Cart</a>
+                                                {{csrf_field() }}
+                                                <input type="hidden" value="{{$pakaian->gambars()->where('StatusGambar','=','pertama')->firstOrFail()->gambar}}" name="gambar"/>
+                                                <input type="hidden" value="{{$pakaian->id}}" name="id"/>
+                                                <input type="hidden" value="{{$pakaian->namaPakaian}}" name="nama"/>
+                                                <input type="hidden" value="{{$pakaian->hargaSatuan}}" name="harga"/>
+                                                <input type="submit" class="aa-add-to-cart-btn" value="add to cart"/>
+                                            </form>
                                             <a class="aa-add-to-cart-btn" href="#" data-toggle="modal" data-target="#myModal">Message</a>
                                         </div>
                                     </div>
@@ -89,7 +102,7 @@
                                 </div>
                                 <div class="tab-pane fade " id="review">
                                     <div class="aa-product-review-area">
-                                        <h4>2 Reviews for T-Shirt</h4>
+                                        <h4>{{$pakaian->komentars()->count()}}Reviews for {{$pakaian->namaPakaian}}</h4>
                                         <ul class="aa-review-nav">
                                             @foreach($pakaian->komentars()->get() as $komen)
                                             <li>
@@ -160,6 +173,7 @@
                                 <li>
                                     <figure>
                                         <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
+
                                         <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>

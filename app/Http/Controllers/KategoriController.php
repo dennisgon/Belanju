@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Produk;
 
 class KategoriController extends Controller
 {
@@ -102,5 +103,10 @@ class KategoriController extends Controller
         //
         $kategori = Category::findOrFail($id);
         $kategori->delete();
+    }
+    public function tampilkan($id)
+    {
+        $kategori = Produk::where('kategori_id', $id)->get();
+        return view('kategori/tampilkan', compact('kategori'));
     }
 }

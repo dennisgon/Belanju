@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Toko;
+use App\Category;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
@@ -20,8 +21,9 @@ class HomepageController extends Controller
         // $contentContact = json_decode(file_get_contents($path), true);
         // $pathAbout =resource_path('json/about.json');
         // $contentAbout = json_decode(file_get_contents($path), true);
+        $category = Category::all();
 
-        return view('homepage');
+        return view('homepage', compact('category'));
 
     }
 

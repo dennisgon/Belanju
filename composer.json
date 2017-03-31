@@ -14,7 +14,8 @@
         "illuminate/view": "5.3.*",
         "laravelcollective/html": "^5.3",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "gloudemans/shoppingcart": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -45,7 +45,7 @@ class ProdukController extends Controller
         $produk = new Produk();
         $produk->hargaSatuan = $request->harga;
         $produk->namaPakaian = $request->nama;
-        $produk->kategoriId = $request->kategori;
+        $produk->category_id = $request->kategori;
         $produk->deskripsiPakaian = $request->desk;
         $produk->deskripsiSingkat = $request->desksing;
         $produk->warna = $request->warna;
@@ -54,7 +54,7 @@ class ProdukController extends Controller
         $produk->jenisKelamin = $request->jlk;
         $tokoId = Toko::where('nama','=',session()->get('tokos')[0])->firstOrFail();;
         $produk->stok = $request->stok;
-        $produk->tokoId = $tokoId->id;
+        $produk->toko_id = $tokoId->id;
         $produk->save();
         $insertedId = $produk->id;
 
@@ -65,7 +65,7 @@ class ProdukController extends Controller
         $file->move($destination_path, $filename);
         $gambar->gambar = $destination_path . $filename;
         $gambar->statusGambar = "pertama";
-        $gambar->pakaianId = $insertedId;
+        $gambar->produk_id = $insertedId;
         $gambar->save();
 
         $gambar1 = new Gambar();
@@ -75,7 +75,7 @@ class ProdukController extends Controller
         $file1->move($destination_path, $filename);
         $gambar1->gambar = $destination_path . $filename;
         $gambar1->statusGambar = "kedua";
-        $gambar1->pakaianId = $insertedId;
+        $gambar1->produk_id = $insertedId;
         $gambar1->save();
 
         $gambar2 = new Gambar();
@@ -85,7 +85,7 @@ class ProdukController extends Controller
         $file2->move($destination_path, $filename);
         $gambar2->gambar = $destination_path . $filename;
         $gambar2->statusGambar = "ketiga";
-        $gambar2->pakaianId = $insertedId;
+        $gambar2->produk_id = $insertedId;
         $gambar2->save();
 
         $gambar3 = new Gambar();
@@ -95,7 +95,7 @@ class ProdukController extends Controller
         $file4->move($destination_path, $filename);
         $gambar3->gambar = $destination_path . $filename;
         $gambar3->statusGambar = "keempat";
-        $gambar3->pakaianId = $insertedId;
+        $gambar3->produk_id = $insertedId;
         $gambar3->save();
 
         $gambar4 = new Gambar();
@@ -105,7 +105,7 @@ class ProdukController extends Controller
         $file4->move($destination_path, $filename);
         $gambar4->gambar = $destination_path . $filename;
         $gambar4->statusGambar = "kelima";
-        $gambar4->pakaianId = $insertedId;
+        $gambar4->produk_id = $insertedId;
         $gambar4->save();
     }
 

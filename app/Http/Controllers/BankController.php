@@ -42,7 +42,7 @@ class BankController extends Controller
         $bank = new Bank();
         $bank->namaBank = $request->nama;
         $file = $request->file('gambar');
-        $destination_path = 'uploads/kategori/';
+        $destination_path = 'uploads/bank/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
         $bank->logo = $destination_path . $filename;

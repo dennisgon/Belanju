@@ -20,7 +20,7 @@ class CreateKomentarsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('produk_id')->unsigned();
-            $table->foreign('produk_id')->references('id')->on('produk');
+            $table->foreign('produk_id')->references('id')->on('produks');
             $table->timestamps();
         });
     }

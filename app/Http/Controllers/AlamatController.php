@@ -43,7 +43,7 @@ class AlamatController extends Controller
         //
         $user = User::find(Auth::user()->id);
         $alamat = new Alamat;
-        if (!Alamat::where('user_id', Auth::user()->id)) {
+        if (count($user->alamats()->get())==0) {
             # code...
             $alamat->status = "primary";
         }

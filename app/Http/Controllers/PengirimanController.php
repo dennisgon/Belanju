@@ -41,7 +41,7 @@ class PengirimanController extends Controller
         $kurir = new Pengiriman;
         $kurir->nama = $request->namaPengiriman;
         $file = $request->file('gambar');
-        $destination_path = 'uploads/kurir';
+        $destination_path = 'uploads/kurir/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
         $kurir->logo = $destination_path . $filename;

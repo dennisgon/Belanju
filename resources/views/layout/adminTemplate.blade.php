@@ -89,6 +89,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </ul>
                             </li>
                             <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-eye nav_icon"></i> <span class="nav-label">Membership</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('membership.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Membership</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('membership.index')}}"><i class="fa fa-table nav_icon"></i>View Membership</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-money nav_icon"></i> <span class="nav-label">Jenis Pembayaraan</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('jenisPem.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Jenis Pembayaraan</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('jenisPem.index')}}"><i class="fa fa-table nav_icon"></i>View Jenis Pembayaraan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class=" hvr-bounce-to-right" href=""><i class="fa fa fa-columns nav_icon"></i> <span class="nav-label">Tempat Promosi</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('tempatPromosi.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Tempat Promosi</a></li>
+                                    <li><a class=" hvr-bounce-to-right" href="{{route('tempatPromosi.index')}}"><i class="fa fa-table nav_icon"></i>View Tempat Promosi</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a class=" hvr-bounce-to-right" href=""><i class="fa fa  fa-university nav_icon"></i> <span class="nav-label">Bank</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li><a class=" hvr-bounce-to-right" href="{{route('bank.create')}}"><i class="fa  fa-plus nav_icon"></i>Add Bank</a></li>
