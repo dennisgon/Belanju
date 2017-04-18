@@ -45,7 +45,7 @@ class ProdukController extends Controller
         $produk = new Produk();
         $produk->hargaSatuan = $request->harga;
         $produk->namaPakaian = $request->nama;
-        $produk->category_id = $request->kategori;
+        $produk->kategori_id = $request->kategori;
         $produk->deskripsiPakaian = $request->desk;
         $produk->deskripsiSingkat = $request->desksing;
         $produk->warna = $request->warna;
